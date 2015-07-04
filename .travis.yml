@@ -28,7 +28,3 @@ matrix:
     - php: 7.0
     - php: hhvm
 
-# execute any number of scripts before the test run, custom env's are available as variables
-
-script: phpunit --configuration phpunit_$DB.xml --coverage-text
-
