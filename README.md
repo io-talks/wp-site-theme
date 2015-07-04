@@ -1,4 +1,5 @@
 # Tema do site IO - Talks
+[![Build Status](https://api.travis-ci.org/io-talks/wp-site-theme.png?branch=master)](https://travis-ci.org/io-talks/wp-site-theme)
 
 ## Como contribuir?
 
