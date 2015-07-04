@@ -1,8 +1,8 @@
-# Travis CI (MIT License) configuration file for the WordPress theme.
+# Travis CI (MIT License) configuration file for the Underscores WordPress theme.
 # @link https://travis-ci.org/
 
-# For use with this WordPress theme.
-# @link https://github.com/io-talks/wp-site-theme
+# For use with the Underscores WordPress theme.
+# @link https://github.com/Automattic/_s
 
 # Declare project language.
 # @link http://about.travis-ci.org/docs/user/languages/php/
@@ -50,7 +50,6 @@ matrix:
 # e.g. sudo apt-get update.
 # Failures in this section will result in build status 'errored'.
 # before_install:
-sudo: false
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -105,3 +104,8 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
+
+# Receive notifications for build results.
+# @link http://docs.travis-ci.com/user/notifications/#Email-notifications
+notifications:
+  email: false
