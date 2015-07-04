@@ -92,6 +92,9 @@ before_script:
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
+phpunit --configuration phpunit.xml
+
+
   # Search for PHP syntax errors.
   - find . \( -name '*.php' \) -exec php -lf {} \;
   # WordPress Coding Standards
