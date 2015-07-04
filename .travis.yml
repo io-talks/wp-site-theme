@@ -12,14 +12,15 @@ env:
 
 
 before_script:
-    - wget https://raw.github.com/wp-cli/sample-plugin/master/bin/install-wp-tests.sh
-    - export WP_TESTS_DIR=wordpress
-    - bash install-wp-tests.sh wordpress root '' localhost $WP_VERSION
-    - cd wordpress
     - export PHPCS_DIR=/tmp/phpcs
     - export PHPCS_BIN=$(if [[ $PHPCS_BRANCH == 3.0 ]]; then echo $PHPCS_DIR/bin/phpcs; else echo $PHPCS_DIR/scripts/phpcs; fi)
     - mkdir -p $PHPCS_DIR && git clone --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git -b $PHPCS_BRANCH $PHPCS_DIR
     - $PHPCS_BIN --config-set installed_paths $(pwd)
+    - wget https://raw.github.com/wp-cli/sample-plugin/master/bin/install-wp-tests.sh
+    - export WP_TESTS_DIR=wordpress
+    - bash install-wp-tests.sh wordpress root '' localhost $WP_VERSION
+    - cd wordpress
+    
     
 
 script:
