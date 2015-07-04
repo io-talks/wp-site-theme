@@ -1,14 +1,12 @@
-sudo: false
-
-language:
-    - php
+language: php
 
 php:
-    - 5.4
-    - 5.5i
+  - 5.3
+  - 5.4
+  - 5.5
 
-env:
-    - WP_VERSION=latest WP_MULTISITE=0
-    - WP_VERSION=latest WP_MULTISITE=1
-    - WP_VERSION=4.0 WP_MULTISITE=0
-    - WP_VERSION=4.0 WP_MULTISITE=1
+before_script:
+    - sudo composer self-update
+    - composer install --dev
+
+script: phpunit
